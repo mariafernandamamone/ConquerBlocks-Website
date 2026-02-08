@@ -1,74 +1,26 @@
 @use '../abstracts/abstracts' as *;
 
-.button {
-    @include button-style();
-    line-height: 1;
-    transition: background-color 0.3s ease;
-}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
 
-.button-text {
-    font-family: $font-title;
-    font-size: 20px;
-    font-weight: 600;
-    padding: 20px 30px;
-    transition: color 0.3s ease, background-color 0.3s ease;
-    letter-spacing: 2px;
-}
+  font-family: $font-primary;
+  font-size: 0.875rem;
+  font-weight: 600;
 
-.button-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 17px;
-    transition: background-color 0.3s ease;
-    
-    img {
-        width: 10px;
-        height: auto;
-    }
-}
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
 
-.button-right {
-    .button-text {
-        background-color: $black;
-        color: $white;
-    }
-
-    .button-icon {
-        background-color: $orange;
-    }
-
-    &:hover {
-        .button-text {
-            background-color: $orange;
-            color: $white;
-        }
-
-        .button-icon {
-            background-color: $black;
-        }
-    }
-}
-
-
-.button-left {
-    .button-text {
-        background-color: $black;
-        color: $white;
-    }
-
-    .button-icon {
-        background-color: $orange;
-    }
-
-    &:hover {
-        .button-text {
-            background-color: $orange;
-            color: $white;
-        }
-
-        .button-icon {
-            background-color: $black;
-        }
-    }
+  &--primary {
+    color: #fff;
+    border-radius: 3px;
+    background: linear-gradient(
+      135deg,
+      $light-blue 60%,
+      $light-green 100%
+    );
+  }
 }

@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import path from 'path';
 
 export default defineConfig({
- base: '/modern-art-gallery/',
+ base: '/ConquerBlocks-Website/',
  resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
@@ -13,7 +13,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: './index.html',
-        location: './Location.html', 
       },
     },
   },

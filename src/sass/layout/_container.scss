@@ -1,0 +1,15 @@
+@use '../abstracts/abstracts' as *;
+
+.container {
+  width: 100%;
+  padding-inline: 1rem;
+  margin-inline: auto;
+
+  @include breakpoint(tablet) {
+    max-width: $bp-tablet;
+  }
+
+  @include breakpoint(desktop) {
+    max-width: $bp-desktop;
+  }
+}
