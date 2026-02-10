@@ -13,10 +13,37 @@
   <body>
     <header class="header">
       
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
       <div class="container header__inner">
         <a href="/" class="header__logo">
           <img src="/src/images/Conquer-Blocks-logo.avif" alt="Logo-ConquerBlocks">
         </a>
+
+        <nav class="nav">
+        
+          <ul class="nav__list">
+            <li class="nav__item nav__item--dropdown">
+
+              <input type="checkbox" id="formaciones-toggle" class="dropdown-toggle">
+
+              <label for="formaciones-toggle" class="nav__link">
+                Formaciones
+                <span class="arrow">v</span>
+              </label>
+
+              <ul class="dropdown">
+                <li><a href="#">Máster en Desarrollo Web Full-Stack</a></li>
+                <li><a href="#">Máster en Desarrollo Blockchain</a></li>
+                <li><a href="#">Máster en Inteligencia Artificial</a></li>
+                <li><a href="#">Máster en Ciberseguridad</a></li>
+              </ul>
+
+            </li>
+            <li class="nav__item"><a class="nav__link" href="#opiniones">Opiniones</a></li>
+            <li class="nav__item"><a class="nav__link" href="#about">Sobre nosotros</a></li>
+          </ul>
+        </nav>
 
         <a href="#" class="btn btn--primary header__cta">
           Empieza tu curso >
@@ -30,41 +57,10 @@
           </svg>
         </label>          
       </div>
-      
-      <input type="checkbox" id="menu-toggle" class="menu-toggle">
-      
-      <nav class="nav container">
         
-        <ul class="nav__list">
-          <li class="nav__item nav__item--dropdown">
-
-            <input type="checkbox" id="formaciones-toggle" class="dropdown-toggle">
-
-            <label for="formaciones-toggle" class="nav__link">
-              Formaciones
-              <span class="arrow">v</span>
-            </label>
-
-            <ul class="dropdown">
-              <li><a href="#">Máster en Desarrollo Web Full-Stack</a></li>
-              <li><a href="#">Máster en Desarrollo Blockchain</a></li>
-              <li><a href="#">Máster en Inteligencia Artificial</a></li>
-              <li><a href="#">Máster en Ciberseguridad</a></li>
-            </ul>
-
-          </li>
-
-          
-          <li class="nav__item"><a class="nav__link" href="#opiniones">Opiniones</a></li>
-          <li class="nav__item"><a class="nav__link" href="#about">Sobre nosotros</a></li>
-        </ul>
-      </nav>
     </header>
 
     <main>
-      <section class="hero">
-        <!-- hero content -->
-      </section>
 
       <section id="masters" class="masters">
         <!-- bloques de masters -->

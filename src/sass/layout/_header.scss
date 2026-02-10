@@ -1,39 +1,37 @@
 @use '../abstracts/abstracts' as *;
 
 .header {
-  overflow-x: hidden;
   width: 100%;
   background-color: #fff;
+  position: relative;
 
   &__inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding-top: 1rem;
     gap: 0.75rem;
   }
 
   &__logo {
     display: block;
+    padding-left: 20px;
 
     img {
       max-height: 20px;
       width: auto;
-      padding: 0px 20px;
     }
   }
 
   &__cta {
     margin-left: auto;
-    margin-right: 1rem;
   }
 
   &__toggle {
     background: none;
     border: none;
-    padding: 0;
     cursor: pointer;
     padding-right: 20px;
+    margin-left: 0.5rem;
 
     svg {
       width: 28px;
@@ -49,6 +47,7 @@
 }
 
 .menu-toggle {
+  margin-left: auto;
   position: absolute;
   opacity: 0;
   pointer-events: none;
@@ -57,15 +56,20 @@
 .nav {
   max-height: 0;
   overflow: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
 }
 
-.menu-toggle:checked ~ .nav {
+.header > .menu-toggle:checked + .header__inner .nav {
   max-height: 500px;
 }
 
-.menu-toggle:checked ~ * .header__toggle {
+.header > .menu-toggle:checked + .header__inner .header__toggle {
   background: $light-grey;
 }
+
 
 .nav__list {
   list-style: none;
@@ -110,18 +114,74 @@
   transform: rotate(180deg);
 }
 
-@include breakpoint(tablet) {
-  .header__toggle {
+@include breakpoint(desktop) {
+  .header {
+    
+    &__inner {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav {
+      position: static;
+      max-height: none;
+      overflow: visible;
+      flex: 1;
+
+      &__list {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        gap: 32px;
+      }
+
+      &__item {
+        padding: 0;
+      }
+    }
+
+    &__cta {
+      margin-left: auto;
+    }
+
+    &__toggle {
+      display: none;
+    }
+  }
+
+  .nav .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
     display: none;
+    min-width: 260px;
+    background-color: white;
+    li:hover {
+      background-color: $light-grey;
+    }
   }
 
-  .nav {
-    display: block !important;
+  .nav__list,
+  .dropdown {
+    list-style: none;
+    margin: 0;
   }
 
-  .nav__list {
-    flex-direction: row;
-    align-items: center;
-    gap: 2rem;
+  .nav__item--dropdown {
+    position: relative;
   }
+
+  .nav__item--dropdown .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  .nav__item--dropdown:hover .dropdown {
+    display: block;
+  }
+
 }
+
+
