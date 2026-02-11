@@ -115,17 +115,15 @@
 }
 
 .formation-card {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
 
   &__image-link img {
     width: 100%;
     display: block;
-  }
-
-  &__content {
-    padding: 1.5rem;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
   }
 
   h3 {
@@ -197,5 +195,76 @@
 
   .formation-card__button {
     margin-top: auto;
+  }
+}
+
+.blog {
+
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: $dark-grey;
+  }
+
+  &__grid {
+    display: grid;
+    gap: 24px;
+  }
+}
+
+.blog-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    color: $dark-grey;
+
+    a {
+        @include breakpoint(desktop) {
+            font-size: 1.5rem;
+        }
+        text-decoration: none;
+        color: inherit;
+    }
+  }
+
+  &__excerpt {
+    flex: 1;
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+  }
+}
+
+@include breakpoint(desktop) {
+  .blog__grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
