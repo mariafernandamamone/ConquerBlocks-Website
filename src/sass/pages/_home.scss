@@ -87,3 +87,115 @@
     background-position: center 20%;
   }
 }
+
+.formations {
+  padding: 4rem 1.5rem;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  &__intro {
+    text-align: center;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: $dark-grey;
+  }
+}
+
+.formation-card {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  &__image-link img {
+    width: 100%;
+    display: block;
+  }
+
+  &__content {
+    padding: 1.5rem;
+  }
+
+  h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    font-size: 1rem;
+    color: $dark-grey;
+  }
+
+  &__features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+
+    li {
+      margin-bottom: 0.5rem;
+      position: relative;
+      padding-left: 1.5rem;
+
+      &::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #6cc070;
+      }
+    }
+  }
+
+  &__button {
+    display: block;
+    text-align: center;
+    background: $dark-grey;
+    color: #fff;
+    padding: 0.8rem;
+    text-decoration: none;
+    font-weight: 600;
+  }
+}
+
+@include breakpoint(desktop) {
+
+  .formations__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .formations__title {
+    font-size: 2.2rem;
+  }
+
+  .formation-card {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .formation-card__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .formation-card__button {
+    margin-top: auto;
+  }
+}
