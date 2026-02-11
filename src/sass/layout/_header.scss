@@ -4,6 +4,8 @@
   width: 100%;
   background-color: #fff;
   position: relative;
+  z-index: 10;
+  padding-bottom: 20px;
 
   &__inner {
     display: flex;
@@ -60,6 +62,7 @@
   top: 100%;
   left: 0;
   width: 100%;
+  background-color: white;
 }
 
 .header > .menu-toggle:checked + .header__inner .nav {
@@ -94,7 +97,7 @@
 }
 
 .dropdown li {
-  padding: 18px 0;
+  padding: 18px 10px;
 }
 
 .dropdown-toggle:checked ~ .dropdown {
