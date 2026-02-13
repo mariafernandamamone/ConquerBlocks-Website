@@ -1,0 +1,109 @@
+@use '../abstracts/abstracts' as *;
+
+.opiniones {
+  background-color: $light-grey;
+  padding: 4rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      max-width: 500px;
+      margin: 0 auto;
+      opacity: 0.7;
+    }
+  }
+
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.review-card {
+  background: White;
+  padding: 1.8rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+
+    img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    h3 {
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    span {
+      font-size: 0.8rem;
+      color: #777;
+    }
+  }
+
+  &__date {
+    font-size: 0.8rem;
+    color: $dark-grey;
+  }
+
+  &__rating {
+    color: $light-blue;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  &__title {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: $dark-grey;
+  }
+
+  &__experience {
+    font-size: 0.75rem;
+    color: #666;
+  }
+}
+
+@include breakpoint (tablet) {
+  .opiniones__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
