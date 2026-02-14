@@ -9,9 +9,12 @@
   align-items: center;
   gap: 3rem;
   text-align: center;
-  padding: 2.5rem 1.5rem;
+  padding: 2.5rem 4rem;
   @include breakpoint (tablet) {
     flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
   }
 
   &__logo {

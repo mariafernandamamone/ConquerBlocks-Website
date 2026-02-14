@@ -7,9 +7,11 @@
 
   @include breakpoint(tablet) {
     max-width: $bp-tablet;
+    padding-inline: 2rem;
   }
 
   @include breakpoint(desktop) {
     max-width: $bp-desktop;
+    padding-inline: 4rem;
   }
 }
