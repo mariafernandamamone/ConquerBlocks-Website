@@ -1,0 +1,108 @@
+@use '../abstracts/abstracts' as *;
+
+.master {
+  padding-block: 5rem;
+
+  &__hero {
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 6rem;
+
+    @include breakpoint(desktop) {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+  }
+
+  &__content {
+    h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: $text-muted;
+      margin-bottom: 2rem;
+      max-width: 550px;
+    }
+  }
+
+  &__image {
+    img {
+      width: 100%;
+      border-radius: 1.5rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  &__aprendizaje {
+    margin-bottom: 6rem;
+    max-width: 800px;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    ul {
+      display: grid;
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+
+      li {
+        background: #f8f9fb;
+        padding: 1rem 1.5rem;
+        border-radius: 0.75rem;
+        font-weight: 500;
+        transition: 0.2s ease;
+
+        &:hover {
+          transform: translateX(5px);
+          background: #eef1f6;
+        }
+      }
+    }
+  }
+
+  &__metodologia {
+    margin-bottom: 6rem;
+    max-width: 800px;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: $text-muted;
+    }
+  }
+
+  &__cta {
+    margin-top: 6rem;
+    padding: 4rem 2rem;
+    border-radius: 2rem;
+    text-align: center;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 180, 216, 0.1),
+      rgba(0, 119, 182, 0.15)
+    );
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn { 
+      font-size: 1rem;
+      padding: 0.9rem 2rem;
+    }
+  }
+}
