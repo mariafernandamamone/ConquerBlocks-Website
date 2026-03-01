@@ -73,6 +73,16 @@
   background: $light-grey;
 }
 
+.nav__item--dropdown > .nav__link::after {
+  content: "▾";
+  margin-left: 6px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-toggle:checked + .nav__link::after {
+  transform: rotate(180deg);
+}
 
 .nav__list {
   list-style: none;
@@ -157,12 +167,21 @@
     position: absolute;
     top: 100%;
     left: 0;
-    display: none;
     min-width: 260px;
     background-color: white;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.25s ease;
+
     li:hover {
       background-color: $light-grey;
     }
+  }
+
+  .nav__item--dropdown:hover > .nav__link::after {
+    transform: rotate(180deg);
   }
 
   .nav__list,
@@ -182,9 +201,14 @@
   }
 
   .nav__item--dropdown:hover .dropdown {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
 
+  .dropdown-toggle {
+    display: none;
+  }
 }
 
 
